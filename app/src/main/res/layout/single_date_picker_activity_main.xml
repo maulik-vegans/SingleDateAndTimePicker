@@ -27,18 +27,25 @@
 
     <!-- divider color is overridden with picker_default_divider_color in the app-projcet, giving us the top+bottom divider around Today  -->
     <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
-        android:id="@+id/single_day_picker"
+        android:id="@+id/datepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        app:picker_displayDays="false"
+        app:picker_displayHours="false"
+        app:picker_displayYears="true"
+        app:picker_displayMonth="true"
+        app:picker_displayMinutes="false"
+        app:picker_displayDaysOfMonth="true"
+        app:picker_itemSpacing="5dp"
+        app:picker_curvedMaxAngle="25"
         app:picker_curved="true"
-        app:picker_cyclic="false"
-        app:picker_dayCount="31"
-        app:picker_itemSpacing="6dp"
-        app:picker_mustBeOnFuture="true"
         app:picker_selectorColor="@android:color/transparent"
-        app:picker_textAlign="center"
-        app:picker_visibleItemCount="9"
-        app:fontFamily="@font/dinot_bold"/>
+        app:picker_cyclic="false"
+        app:picker_visibleItemCount="3"
+        app:fontFamily="@font/dinot_bold"
+        />
 
     <TextView
         android:layout_width="wrap_content"

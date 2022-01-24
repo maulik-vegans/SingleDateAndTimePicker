@@ -8,6 +8,8 @@ import androidx.core.content.res.ResourcesCompat;
 
 import com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker;
 
+import java.util.Calendar;
+
 public class SingleDatePickerMainActivity extends AppCompatActivity {
 
     @Override
@@ -15,12 +17,14 @@ public class SingleDatePickerMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.single_date_picker_activity_main);
 
-        final SingleDateAndTimePicker singleDateAndTimePicker = findViewById(R.id.single_day_picker);
+        final SingleDateAndTimePicker singleDateAndTimePicker = findViewById(R.id.datepicker);
         final SingleDateAndTimePicker singleDateAndTimePicker2 = findViewById(R.id.single_day_picker2);
         // Example for setting default selected date to yesterday
-//        Calendar instance = Calendar.getInstance();
-//        instance.add(Calendar.DATE, -1 );
+        Calendar instance = Calendar.getInstance();
+        instance.add(Calendar.YEAR, -1 );
 //        singleDateAndTimePicker.setDefaultDate(instance.getTime());
+        singleDateAndTimePicker.setMinDate(instance.getTime());
+        singleDateAndTimePicker.setMaxDate(Calendar.getInstance().getTime());
         SingleDateAndTimePicker.OnDateChangedListener changeListener = (displayed, date) -> display(displayed);
         singleDateAndTimePicker.addOnDateChangedListener(changeListener);
         singleDateAndTimePicker2.addOnDateChangedListener(changeListener);

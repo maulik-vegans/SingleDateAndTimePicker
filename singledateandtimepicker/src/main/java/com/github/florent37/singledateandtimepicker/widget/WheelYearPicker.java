@@ -60,12 +60,12 @@ public class WheelYearPicker extends WheelPicker<String> {
 
     public void setMaxYear(int maxYear) {
         this.maxYear = maxYear;
-        notifyDatasetChanged();
+        updateAdapter();
     }
 
     public void setMinYear(int minYear) {
         this.minYear = minYear;
-        notifyDatasetChanged();
+        updateAdapter();
     }
 
     @Override
